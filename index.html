@@ -6,6 +6,28 @@
 <script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+<link rel="stylesheet" href="./static/css/bulma.min.css">
+<link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+<link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+<link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link rel="stylesheet" href="./static/css/index.css">
+<link rel="icon" href="./static/images/shail_logo.jpeg">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="./static/js/fontawesome.all.min.js"></script>
+<script src="./static/js/bulma-carousel.min.js"></script>
+<script src="./static/js/bulma-slider.min.js"></script>
+<script src="./static/js/index.js"></script>
+
+
 <style type="text/css">
 body {
     font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -146,6 +168,7 @@ hr {
 .material-icons {
     vertical-align: -6px;
 }
+
 p {
     line-height: 1.25em;
 }
@@ -208,12 +231,12 @@ figure {
 
   border-width: 0;
   outline: none;
-  border-radius: 2px;
+  border-radius: 4px;
   
-  background-color: #5364cc;
+  background-color: #665f5c;
   color: white !important;
-  font-size: 20px;
-  width: 100px;
+  font-size: 16px;
+  /* width: 100px; */
   font-weight: 600;
 }
 .paper-btn-parent {
@@ -366,6 +389,7 @@ pre {
 <body>
 <div class="topnav" id="myTopnav">
 </div>
+
 <div class="container">
     <div class="paper-title">
     <h1> 
@@ -397,8 +421,9 @@ pre {
         <div style="clear: both">
             <div class="paper-btn-parent">
             <a class="paper-btn" href="https://arxiv.org/abs/2309.17343">
-                <span class="material-icons"> description </span> 
-                 Arxiv
+                <!-- <span class="material-icons"> description </span>  -->
+                <i class="ai ai-arxiv"></i>
+                 arXiv
             </a>
             <!-- <a class="paper-btn" href="">
                 <span class="material-icons"> description </span> 
@@ -406,12 +431,15 @@ pre {
             </a> -->
             <div class="paper-btn-coming-soon">
                 <a class="paper-btn" href="https://github.com/Neural-Litho/Neural_Lithography">
-                    <span class="material-icons"> code </span>
-                    Code
+                    <!-- <span class="material-icons"> code </span> -->
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                code (Coming soon)
                 </a>
             </div>
         </div></div>
-    </div>
+
 
     <section id="teaser-image">
         <center>
@@ -443,13 +471,13 @@ pre {
     </section>
     <section id="method"/>
         <hr>
-        <h2>What we do?</h2>
+        <h2>What We Contribute?</h2>
         <b>TL;DR:</b> A real2sim pipeline to quantitatively construct a high-fidelity neural photolithography simulator and a design-fabrication co-optimization framework to bridge the design-to-manufacturing gap in computational optics. 
 
         <h3><u>This work identifies two obstacles in computational optics: </u></h3>
 
         <h4>1⃣ What is the "elephant in the room" in Computational Lithography?</h4> 
-        - <b>high-fidelity photolithography simulator</b> | "No matter how good we can advance the computational (inverse) lithography algorithm, the performance bound is grounded in the fidelity of the lithography simulator."  
+        - <b>High-fidelity photolithography simulator</b> | "No matter how good we can advance the computational (inverse) lithography algorithm, the performance bound is grounded in the fidelity of the lithography simulator."  
 
         <h4>2⃣ What hinders the progress of computational optics?</h4>
         - One should be the <b>Design to Manufacturing gap.</b> | 
@@ -609,7 +637,7 @@ pre {
             <center>
                 <figure style="width: 100%;">
                         <a>
-                            <img width="80%" src="asserts/ imaging.png"> 
+                            <img width="60%" src="asserts/ imaging.png"> 
                         </a>
                         <p class="caption" style="margin-bottom: 24px;"><br>
             <b>Imaging performance with the designed MDL</b>. A: Sketch of the setup for characterizing the performance of MDL. B: We show our measured PSFs and direct imaging results (i.e., w/o deconvolution) corresponding to design w/o and w/ PBL litho model. The end of this row shows the line profiles of PSFs designed w/o or w/ different litho models. C: Computational/Indirect Imaging result of the MDL. The lower right compares the Fourier spectrum of the designed PSFs. <b>Our method's design enhances the contrast in direct imaging (B) and the high-frequency imaging performance in computational imaging (C)</b>.                        
@@ -638,12 +666,20 @@ pre {
         <section id="faq">
             <h2>Frequently asked questions (FAQ)</h2>
             <hr>
-            <!-- <div class="flex-row">
-                <p>
-                     The hierarchical VAE architecture of LION is crucial for scalability and capturing diverse shape data. It allows the model to learn a multimodal distribution over different categories without the need for class-conditioning. We find that the shape latent
-                     variables capture global shape, while the latent points model details. We validate this by fixing the shape variable to different values and only sampling different latent points.  
-                </p>
-            </div>  -->
+            
+        <h4>1. Does this work provide a 'one-size-fits-all' litho model?</h4>
+        <b>NO</b>. Our goal isn't to learn a model that generalizes across different lithography types or different modalities of a type. Instead, we present a pipeline on how to OVERFIT to a single lithography system with a specific photoresist and post-processing procedure.
+
+        <h4>2. What are the assumptions for the applicability of the learned neural litho model?</h4>
+        1⃣ No single lithography process can be perfectly represented by one white-box model. Factors like optical misalignment, hardware tolerances, differences in conditions, and even temperature and humidity can introduce variability. 
+        2⃣ If a specific lithography system and photoresist remain consistent over time, and once digitalized remain stable, a learned gray-box simulator trained on data from that environment should be effective.
+
+        <!-- <div class="flex-row">
+            <p>
+                The hierarchical VAE architecture of LION is crucial for scalability and capturing diverse shape data. It allows the model to learn a multimodal distribution over different categories without the need for class-conditioning. We find that the shape latent
+                variables capture global shape, while the latent points model details. We validate this by fixing the shape variable to different values and only sampling different latent points.  
+            </p>
+        </div>  -->
 
         <section id="bibtex">
             <h2>Citation</h2>
