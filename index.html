@@ -405,12 +405,46 @@
     .toggle-button {
         cursor: pointer;
     }
+
+    .citation-block {
+        background-color: #f8f9fa;
+        padding: 16px;
+        margin: 16px 0;
+        border-radius: 4px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        white-space: pre;  /* Preserve whitespace and line breaks */
+        line-height: 1.5;  /* Add some vertical spacing between lines */
+    }
+
+    .citation-block .bibtex-keyword {
+        color: #d73a49;  /* red for @article, @inproceedings */
+    }
+
+    .citation-block .bibtex-type {
+        color: #6f42c1;  /* purple for citation key */
+    }
+
+    .citation-block .bibtex-field {
+        color: #005cc5;  /* blue for field names like title, author, etc */
+    }
+
+    .citation-block .bibtex-value {
+        color: #24292e;  /* dark gray for field values */
+    }
+    .views-counter {
+        text-align: center;
+        color: #777;
+        font-size: 14px;
+        margin-top: 6px;
+    }
 </style>
 
 <script type="text/javascript" src="../js/hidebib.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
     rel='stylesheet' type='text/css'>
 
+    
 <head>
     <title> Neural Lithography </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -431,6 +465,7 @@
                 Close the Design to Manufacturing Gap in Computational Optics with a 'Real2Sim' Learned Photolithography
                 Simulator
             </h1>
+            <div id="page-views" class="views-counter" aria-live="polite">Project views: —</div>
         </div>
 
         <div id="authors">
@@ -458,11 +493,19 @@
                     <a class="paper-btn" href="https://arxiv.org/abs/2309.17343">
                         <!-- <span class="material-icons"> description </span>  -->
                         <i class="ai ai-arxiv"></i>
-                        arXiv (Recommended Vesion)
+                        arXiv (Recommended)
                     </a>
                     <a class="paper-btn" href="https://dl.acm.org/doi/abs/10.1145/3610548.3618251">
                         <span class="material-icons"> description </span>
-                        Paper
+                        SA'23 Paper
+                    </a>
+                    <a class="paper-btn" href="https://news.mit.edu/2023/closing-design-manufacturing-gap-optical-devices-1213">
+                        <span class="material-icons"> description </span>
+                        MIT News
+                    </a>
+                    <a class="paper-btn" href="https://drive.google.com/file/d/1YpoZ4gsEHTJhN1sNETQEuWrNbs2rpEim/view">
+                        <span class="material-icons"> description </span>
+                        Slides
                     </a>
                     <div class="paper-btn-coming-soon">
                         <a class="paper-btn" href="https://github.com/Neural-Litho/Neural_Lithography">
@@ -491,17 +534,22 @@
                 <hr>
                 <h2>Updates</h2>
                 <div class="row">
-                    <div><span class="material-icons"> event </span> We will give several <b>invited talks</b>.
+                    <div><span class="material-icons"> event </span> [July 2024] We update arXiv version of our paper based on the feedback from queries and conferences. We highly recommend the curious audience to check out the updated version as it provides more explicit analysis results for our method.</div>
+                    </div>
+                    <!-- <div><span class="material-icons"> event </span> [June 2024] Self-recorded talk videos are uploaded. See Below.</div> -->
+                    <div><span class="material-icons"> event </span> We will give several <b style="color: red;">Invited Talks</b>.
                         Please stay tuned!<br>
+                        <b>[Mar 28 2025]</b> <a href="https://www.semiconchina.org/zh/2185">CISTIC @ Semincon China 2025</a>
+                        in Shanghai.<br>
                         <b>[Nov. 4 2024]</b> <a href="https://www.lithoworkshop.org/">The 28th Lithography Workshop</a>
                         in San
                         Diego.<br>
-                        <b>[June. 8 2024]</b> <a href="https://www.grc.org/image-science-grs-conference/2024/">Image
+                        <b>[June 8 2024]</b> <a href="https://www.grc.org/image-science-grs-conference/2024/">Image
                             Science
                             Gordon Research Seminar</a> & <a
                             href="https://www.grc.org/image-science-conference/2024/">Gordon
                             Research Conference</a>.<br>
-                        <b>[June. 6 2024]</b> <a
+                        <b>[June 6 2024]</b> <a
                             href="https://www.iisb.fraunhofer.de/en/press_media/events/2024/2024-06-06to08-litho-sim-workshop.html">International
                             Lithography Simulation Workshop</a>, Fraunhofer Institute for Integrated Systems and Device
                         Technology IISB.<br>
@@ -509,13 +557,23 @@
                             Seminar.</a><br>
                         <b>[Mar. 6 2024]</b> <a href="https://complightlab.com/outreach/">High-beams
                             seminar</a>, University College London.
+
+                            
                         <div><span class="material-icons"> event </span> [Oct 2023] Paper released on <a
                                 href="https://arxiv.org/abs/2309.17343">arXiv</a>!</div>
                         <div><span class="material-icons"> event </span> [Oct 2023] The paper got accepted to
-                            <b>SIGGRAPH
+                            <b style="color: red;">SIGGRAPH
                                 Asia 2023</b>!
                         </div>
             </section>
+            
+            <!-- <section id="Talks" />
+            <hr>
+            <h2>Talk Videos</h2>
+            <div class="flex-row">
+                <p>
+                    Two videos prepared for different audience groups. We make such a difference as we learn from past talk feedbacks that the audience from <b>(computational) lithography</b> community cares differently from audience from <b>(computational) imaging and display</b> community and the videos prioritize our 2 contributions accordingly.<video src=""></video>
+                </p> -->
 
             <section id="abstract" />
             <hr>
@@ -540,6 +598,31 @@
             </section>
             <section id="method" />
             <hr>
+            <h2>Press Coverage</h2>
+            <div class="flex-row">
+
+                <p>
+                    <a href="https://www.mit.edu/news/2023/09/28/closing-design-manufacturing-gap-optical-devices/"> closing-design-manufacturing-gap-optical-devices - MIT News </a>
+                </p>
+                <p>
+                    <a href="https://mp.weixin.qq.com/s/RrNKBTTYKEOo3ywJZ4rnMA"> 神经光刻：克服计算光学中的设计与制造鸿沟 - 《中国光学》微信公众号 </a>
+                    <br>
+                    <a href="https://docs.google.com/document/d/1doGavqVmlrbf4UG58ePXePADIN4FzTS08uQlCyGqUKc/edit?usp=sharing"> Neural Lithography: Bridging the Design-to-Manufacturing Gap in Computational Optics - Translated version </a>
+                </p>
+
+                <p>
+                    <a href="https://mp.weixin.qq.com/s/zELnh4IA6QTNen-HRzQAAQ"> 神经光刻：克服计算光学中的设计与制造鸿沟 - 《逍遥设计自动化》微信公众号 </a>
+                </p>
+
+                <p>
+                    <a href="https://mp.weixin.qq.com/s/-AZMdvFKo5_apvaCmllFYA"> 神经光刻：弥合计算光学设计与制造的鸿沟 - 《Mntech微纳领航》微信公众号 </a>
+                </p>
+
+            </div>
+
+            <h2>Video</h2>
+
+
             <h2>What We Contribute?</h2>
             <b>TL;DR:</b> A real2sim pipeline to quantitatively construct a high-fidelity neural photolithography
             simulator and a design-fabrication co-optimization framework to bridge the design-to-manufacturing gap in
@@ -772,6 +855,17 @@
                 2⃣ If a specific lithography system and photoresist remain consistent over time, and once digitalized
                 remain stable, a learned gray-box simulator trained on data from that environment should be effective.
 
+                <h4>3. Did this work included the pure differentiable physics based fabrication (lithography) model or just a neural network? </h4>
+
+                Yes we included the pure differentiable physics based fabrication (lithography) model in our work. The Neural Litho simulator is a more complete version that includes the physics-based model and neural network to learn the residuals and we demonstrate the pure differentiable physics based fabrication (lithography) is inferior to the Neural Litho simulator which combines the best of the two worlds.
+
+                <h4>4. Why use AFM but not SEM, as AFM is not precise for measuring 2.5D height maps at ~10nm scale?</h4>
+                It is true that for some AFM modalities such as what is used in our work, the height precision is not as fine as sub-nanometers. However, the SEM cannot get you any height profiles and as a result the height error for SEM is +∞. Thus, we believe the more information, the better outcome and choose the best of the worst as a comprise for now.
+                
+                <h4>5. What is the difference between the SA'23 paper and the arXiv version?</h4>
+                The arXiv version is more comprehensive and contains more details and it will be updated while the SA'23 paper is published and will not be updated anymore. Moreover, the arXiv version has no page limit and we merge useful information from supplementary materials into the main paper.
+
+
                 <!-- <div class="flex-row">
             <p>
                 The hierarchical VAE architecture of LION is crucial for scalability and capturing diverse shape data. It allows the model to learn a multimodal distribution over different categories without the need for class-conditioning. We find that the shape latent
@@ -782,13 +876,19 @@
                 <section id="bibtex">
                     <h2>Citation</h2>
                     <hr>
-                    <pre><code>@article{zheng2023neural,
-            title={Neural Lithography: Close the Design-to-Manufacturing Gap in Computational Optics with a'Real2Sim'Learned Photolithography Simulator},
-            author={Zheng, Cheng and Zhao, Guangyuan and So, Peter TC},
-            journal={arXiv preprint arXiv:2309.17343},
-            year={2023}
-            }
-            </code></pre>
+                    <div class="citation-block"><span class="bibtex-keyword">@article</span>{<span class="bibtex-type">zheng2023neural</span>,
+                    <span class="bibtex-field">    title</span>={<span class="bibtex-value">Neural Lithography: Close the Design-to-Manufacturing Gap in Computational Optics with a'Real2Sim'Learned Photolithography Simulator</span>},
+                    <span class="bibtex-field">    author</span>={<span class="bibtex-value">Zheng, Cheng and Zhao, Guangyuan and So, Peter TC</span>},
+                    <span class="bibtex-field">    journal</span>={<span class="bibtex-value">arXiv preprint arXiv:2309.17343</span>},
+                    <span class="bibtex-field">    year</span>={<span class="bibtex-value">2023</span>}
+                    }</div>
+                    <div class="citation-block"><span class="bibtex-keyword">@inproceedings</span>{<span class="bibtex-type">zheng2023close</span>,
+                    <span class="bibtex-field">    title</span>={<span class="bibtex-value">Close the Design-to-Manufacturing Gap in Computational Optics with a'Real2Sim'Learned Two-Photon Neural Lithography Simulator</span>},
+                    <span class="bibtex-field">    author</span>={<span class="bibtex-value">Zheng, Cheng and Zhao, Guangyuan and So, Peter</span>},
+                    <span class="bibtex-field">    booktitle</span>={<span class="bibtex-value">SIGGRAPH Asia 2023 Conference Papers</span>},
+                    <span class="bibtex-field">    pages</span>={<span class="bibtex-value">1--9</span>},
+                    <span class="bibtex-field">    year</span>={<span class="bibtex-value">2023</span>}
+                    }</div>
                 </section>
 
                 <!-- <h2>Related Work</h2>
@@ -799,6 +899,8 @@
 
 
     </div>
+            <!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=_Oc9F3kg19qBNmKgX28mdlmSyRKP3q24f-fNiCZ4qaE'></script> -->
+        
 
 
     <script>
@@ -806,6 +908,21 @@
             $('.toggle-button').on('click', function () {
                 $(this).next('.content').toggle();
             });
+
+            const pageViewsEl = document.getElementById('page-views');
+            if (pageViewsEl) {
+                const namespace = 'neural-litho.github.io';
+                const key = 'index';
+                const endpoint = 'https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key);
+                fetch(endpoint)
+                    .then(function (response) { return response.json(); })
+                    .then(function (data) {
+                        if (data && typeof data.value === 'number') {
+                            pageViewsEl.textContent = 'Project views: ' + data.value.toLocaleString();
+                        }
+                    })
+                    .catch(function () { /* silently fail */ });
+            }
         });
     </script>
 
