@@ -413,7 +413,9 @@
         border-radius: 4px;
         font-family: 'Courier New', Courier, monospace;
         font-size: 14px;
-        white-space: pre;  /* Preserve whitespace and line breaks */
+        white-space: pre-wrap;  /* Preserve whitespace and line breaks, but allow wrapping */
+        word-wrap: break-word;  /* Break long words if necessary */
+        overflow-wrap: break-word;  /* Modern alternative to word-wrap */
         line-height: 1.5;  /* Add some vertical spacing between lines */
     }
 
